@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio de João Lobo",
+  title: "joaolobo.dev",
   description: "Welcome to My portfolio!",
   icons:"/favicon.ico",
   appleWebApp: {
