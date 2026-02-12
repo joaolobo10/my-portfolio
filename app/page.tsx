@@ -67,7 +67,8 @@ export default function App() {
                   <img 
                     src="/fotoDePerfil.jpg" 
                     alt="Foto de perfil de João" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover"
+                    //className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   />
                </div>
             </div>
