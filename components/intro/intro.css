@@ -1,0 +1,501 @@
+/* ---------------------------------------------------------------
+   Intro: terminal antes do site
+---------------------------------------------------------------- */
+.intro {
+  /* Verde fósforo em OKLCH, contraste medido sobre #000. */
+  --term-bg: #000;
+  --term-green: oklch(0.88 0.22 145); /* #66fc73 · 15.7:1 */
+  --term-green-dim: oklch(0.62 0.13 145); /* #4b9b54 · 6.1:1, textos de apoio */
+  --term-rule: oklch(0.62 0.13 145 / 0.45); /* pontilhados e sublinhado (não é texto) */
+  --term-glow: 0 0 10px oklch(0.88 0.22 145 / 0.35);
+  --term-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* Escala: rótulos em caixa alta, texto de interface, linha de comando. */
+  --term-text-label: 11px;
+  --term-text-ui: 13px;
+  --term-text-cmd: 14px;
+
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-ligatures: none; /* "--user" sem ligadura */
+  color: var(--term-green);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.intro ::selection {
+  background: var(--term-green);
+  color: var(--term-bg);
+}
+
+/* Fundo preto em duas metades + scanline quase imperceptível. Estático até a saída. */
+.intro__half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* +1px: as metades se sobrepõem, sem fresta no meio em alturas ímpares. */
+  height: calc(50% + 1px);
+  background:
+    repeating-linear-gradient(to bottom, oklch(1 0 0 / 0.022) 0 1px, transparent 1px 3px),
+    var(--term-bg);
+}
+
+.intro__half--top {
+  top: 0;
+}
+
+.intro__half--bottom {
+  bottom: 0;
+}
+
+/* Borda verde de cada metade: na saída, as duas juntas continuam a linha do colapso. */
+.intro__edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--term-green);
+  box-shadow:
+    0 0 8px 1px oklch(0.88 0.22 145 / 0.55),
+    0 0 28px 2px oklch(0.88 0.22 145 / 0.25);
+  opacity: 0;
+}
+
+.intro__half--top .intro__edge {
+  bottom: 0;
+}
+
+.intro__half--bottom .intro__edge {
+  top: 0;
+}
+
+.intro__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, oklch(0 0 0 / 0.6) 100%);
+  pointer-events: none;
+}
+
+.intro__screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 16px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform-origin: 50% 50%;
+}
+
+.intro__term {
+  width: min(600px, 100%);
+}
+
+/* ---------- Linhas de cabeçalho ---------- */
+.intro__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 28px;
+  white-space: nowrap;
+}
+
+.intro__meta {
+  font-size: var(--term-text-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--term-green-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.intro__bar {
+  font-size: var(--term-text-ui);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro__lead,
+.intro__cap {
+  flex-shrink: 0;
+  color: var(--term-green-dim);
+}
+
+.intro__owner {
+  flex-shrink: 0;
+  margin: 0;
+  font-weight: 600;
+  text-shadow: var(--term-glow);
+}
+
+.intro__rule {
+  flex: 1 1 auto;
+  min-width: 16px;
+  height: 1px;
+  background-image: radial-gradient(circle, var(--term-rule) 1px, transparent 1px);
+  background-size: 6px 6px;
+  background-repeat: repeat-x;
+  background-position: 0 center;
+}
+
+.intro__time {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.intro__clock {
+  font-variant-numeric: tabular-nums;
+  text-shadow: var(--term-glow);
+}
+
+.intro__clock-tag {
+  font-size: var(--term-text-label);
+  color: var(--term-green-dim);
+}
+
+/* Glifos ainda cifrados ficam no tom de apoio; o texto resolvido acende. */
+.intro .is-cipher {
+  color: var(--term-green-dim);
+  text-shadow: none;
+}
+
+/* ---------- Prompt ---------- */
+.intro__block {
+  margin-top: 44px;
+}
+
+.intro__ask {
+  margin: 0 0 14px;
+  font-size: var(--term-text-cmd);
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+.intro__dim,
+.intro__cmd {
+  color: var(--term-green-dim);
+}
+
+.intro__line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  margin: 0;
+  font-size: var(--term-text-cmd);
+  line-height: 1.6;
+}
+
+.intro__sign {
+  color: var(--term-green);
+}
+
+/* Nome do visitante: isolado do texto ao redor (nomes em árabe/hebraico não invertem a linha). */
+.intro__value {
+  unicode-bidi: isolate;
+  white-space: pre;
+  text-shadow: var(--term-glow);
+}
+
+.intro__field {
+  position: relative;
+  display: inline-grid;
+  flex: 1 1 25ch;
+  min-width: 12ch;
+  max-width: 100%;
+}
+
+.intro__input,
+.intro__ghost {
+  grid-area: 1 / 1;
+  padding: 2px 0 4px;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+.intro__input {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--term-green-dim); /* 6.1:1, limite do campo visível */
+  border-radius: 0;
+  background: transparent;
+  color: var(--term-green);
+  caret-color: var(--term-green);
+  text-shadow: var(--term-glow);
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Com foco, o sublinhado acende e engrossa para 2px: é o indicador de foco do campo. */
+.intro__input:focus {
+  border-bottom-color: var(--term-green);
+  box-shadow: 0 1px 0 var(--term-green);
+}
+
+.intro__field[data-caret] .intro__input {
+  caret-color: transparent;
+}
+
+.intro__ghost {
+  display: none;
+  overflow: hidden;
+  white-space: pre;
+  pointer-events: none;
+}
+
+.intro__field[data-caret] .intro__ghost {
+  display: block;
+}
+
+.intro__ghost-text {
+  visibility: hidden;
+}
+
+.intro__caret {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.15em;
+  margin-left: 1px;
+  vertical-align: -0.2em;
+  background: var(--term-green);
+  box-shadow: var(--term-glow);
+  animation: intro-blink 1s steps(1) infinite;
+}
+
+.intro__count {
+  margin-left: auto;
+  font-size: var(--term-text-label);
+  letter-spacing: 0.08em;
+  color: var(--term-green-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.intro__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.intro__err {
+  min-height: 1.5em;
+  margin: 0;
+  font-size: var(--term-text-ui);
+  line-height: 1.5;
+  text-shadow: var(--term-glow);
+}
+
+.intro__err-text {
+  display: inline-block;
+  animation: intro-shake 220ms var(--term-ease-out);
+}
+
+/* ---------- Botões ---------- */
+.intro__btn,
+.intro__skip {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.15s var(--term-ease-out),
+    transform 0.16s var(--term-ease-out);
+}
+
+.intro__btn {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0 12px;
+  margin-right: -12px;
+  font-size: var(--term-text-label);
+  color: var(--term-green);
+}
+
+.intro__skip {
+  position: absolute;
+  top: max(8px, env(safe-area-inset-top));
+  right: max(8px, env(safe-area-inset-right));
+  z-index: 2;
+  min-height: 44px;
+  padding: 0 12px;
+  font-size: var(--term-text-label);
+  color: var(--term-green-dim);
+}
+
+.intro__btn:active,
+.intro__skip:active {
+  transform: scale(0.97);
+}
+
+.intro__btn:focus-visible,
+.intro__skip:focus-visible {
+  outline: 2px solid var(--term-green);
+  outline-offset: -2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .intro__btn:hover {
+    background-color: oklch(0.88 0.22 145 / 0.1);
+  }
+
+  .intro__skip:hover {
+    color: var(--term-green);
+  }
+}
+
+.intro[data-exiting] .intro__skip {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Logs ---------- */
+.intro__logs {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--term-text-ui);
+  line-height: 1.5;
+  color: var(--term-green-dim);
+}
+
+.intro__log {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 22px;
+  animation: intro-in 200ms var(--term-ease-out) both;
+}
+
+.intro__ok,
+.intro__log--granted {
+  color: var(--term-green);
+  text-shadow: var(--term-glow);
+}
+
+/* ---------- Linha da transição ---------- */
+/* 2px: a mesma altura das duas bordas juntas, para a troca não piscar. */
+.intro__beam {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--term-green);
+  box-shadow:
+    0 0 8px 1px oklch(0.88 0.22 145 / 0.55),
+    0 0 28px 2px oklch(0.88 0.22 145 / 0.25);
+  opacity: 0;
+  transform: scaleX(0.35);
+  pointer-events: none;
+}
+
+/* ---------- Entrada em cascata ---------- */
+/* +90ms: o DecryptedText mostra o texto pronto no primeiro tick antes de embaralhar;
+   a linha só aparece depois disso. */
+.intro__in {
+  animation: intro-in 280ms var(--term-ease-out) calc(var(--d, 0ms) + 90ms) both;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  /* Ancorado no topo: o teclado virtual sobe por baixo sem cobrir o campo. */
+  .intro__screen {
+    align-items: flex-start;
+    padding-top: max(15dvh, 72px);
+  }
+
+  .intro__block {
+    margin-top: 36px;
+  }
+
+  /* 16px evita o zoom automático do iOS ao focar o campo. */
+  .intro {
+    --term-text-cmd: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .intro__coords {
+    display: none;
+  }
+
+  .intro__bar {
+    gap: 8px;
+  }
+}
+
+/* ---------- Keyframes + movimento reduzido ---------- */
+@keyframes intro-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes intro-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes intro-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes intro-shake {
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro__in,
+  .intro__log {
+    animation: intro-fade 200ms ease both;
+  }
+
+  .intro__err-text {
+    animation: intro-fade 200ms ease;
+  }
+
+  .intro__caret {
+    animation: none;
+  }
+
+  .intro__btn:active,
+  .intro__skip:active {
+    transform: none;
+  }
+}
+
+/* Alto contraste do Windows: o cursor em bloco (fundo) some, então volta o caret nativo. */
+@media (forced-colors: active) {
+  .intro__field[data-caret] .intro__ghost {
+    display: none;
+  }
+
+  .intro__field[data-caret] .intro__input {
+    caret-color: auto;
+  }
+}
