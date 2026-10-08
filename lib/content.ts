@@ -72,15 +72,15 @@ const pt: Content = {
   name: 'João Lobo',
   statement: [
     [
-      'Sou estudante de Engenharia de Software na Universidade de Brasília, no 7º semestre, e hoje meu foco é deep learning e visão computacional. Venho me aprofundando em machine learning com Python, PyTorch e OpenCV, e é nessa direção que vão os próximos projetos desta página.',
+      'Sou estudante de Engenharia de Software na Universidade de Brasília, no 7º semestre. Hoje venho me aprofundando em machine learning, deep learning e visão computacional com Python, e também nos fundamentos matemáticos que sustentam essas áreas. É nessa direção que vão os próximos projetos desta página.',
     ],
     [
-      'Pesquisa é o que mais me move. Desde outubro de 2024 sou pesquisador no ',
+      'Sou uma pessoa muito curiosa: gosto de entender como as coisas funcionam por dentro, e foi isso que me levou à pesquisa. Desde outubro de 2024 sou pesquisador no ',
       { text: 'Open Automotive Simulator', href: OAS_URL },
-      ', o simulador veicular da UnB voltado a ensino, pesquisa e desenvolvimento em engenharia automotiva. Construí boa parte do mundo da primeira versão na Unreal Engine 5, de mapas e terreno a trânsito, pedestres, MetaHumans e integração com o MATLAB, e hoje desenvolvo o OAS2 em Godot. O próximo passo é levar visão computacional para dentro do simulador.',
+      ', o simulador veicular da UnB voltado a ensino, pesquisa e desenvolvimento em engenharia automotiva. Construí boa parte do mundo da primeira versão na Unreal Engine 5, de mapas e terreno a trânsito, pedestres e MetaHumans, e hoje desenvolvo o OAS2 em Godot. O próximo passo é levar visão computacional para dentro do simulador.',
     ],
     [
-      'Também gosto do lado criativo de fazer software: pensar como um produto vai funcionar, validar requisitos, desenhar funcionalidades e interfaces que facilitem a vida de quem usa e de quem mantém, sem abrir mão de desempenho. Em paralelo à pesquisa, passei pouco mais de um ano na Trix Tecnologia Inteligente, entre QA e desenvolvimento full stack em Java.',
+      'Também gosto do lado criativo de fazer software: pensar no produto e na solução, entender o problema a fundo e transformá-lo em algo que funcione de verdade, com funcionalidades e interfaces que facilitem a vida de quem usa e de quem mantém, sem abrir mão de desempenho.',
     ],
   ],
   contacts,
@@ -92,7 +92,7 @@ const pt: Content = {
       start: '10.2024',
       status: 'active',
       description:
-        'Pesquisa e desenvolvimento do Open Automotive Simulator. Na Unreal Engine 5, criei mapas, pistas, terreno e landscape com mistura de texturas, World Partition, HLOD e otimização gráfica; montei os sistemas de trânsito e pedestres com NPCs, MetaHumans animados, mapa infinito, a integração com o MATLAB e a UI dos menus. No OAS2, em Godot com GDScript, fiz as câmeras em 1ª e 3ª pessoa, os menus de carro e de parâmetros, a animação do volante e melhorias no modelo de frenagem, e desenvolvo um algoritmo que ajusta sozinho a posição do volante a cada carro.',
+        'Pesquisa e desenvolvimento do Open Automotive Simulator. Na Unreal Engine 5, criei mapas, pistas, terreno e landscape com mistura de texturas, World Partition, HLOD e otimização gráfica; montei os sistemas de trânsito e pedestres com NPCs, MetaHumans animados e a UI dos menus. No OAS2, em Godot com GDScript, fiz as câmeras em 1ª e 3ª pessoa, os menus de carro e de parâmetros, a animação do volante e melhorias no modelo de frenagem. Também desenvolvo um algoritmo que ajusta automaticamente a posição do volante e das câmeras para cada carro e, a partir do artigo GET3D, pesquiso a criação de uma IA capaz de gerar modelos de carros personalizados para serem importados no simulador.',
       ref: 'oas-sim',
       months: 24,
     },
@@ -103,7 +103,7 @@ const pt: Content = {
       end: '08.2026',
       status: 'archive',
       description:
-        'Desenvolvimento full stack em um sistema Java com arquitetura MVC, entre regras de negócio, interface e integração entre camadas. Corrigi bugs críticos, otimizei queries e a performance de páginas, e entreguei threads de exclusão automatizada, um sistema financeiro de automação de contas, rotinas de e-mail e a integração Java com N8n para uso de IA. Virei referência técnica em uma camada de regras de negócio.',
+        'Desenvolvimento full stack em um sistema Java com arquitetura MVC, entre regras de negócio, interface e integração entre camadas. Corrigi bugs críticos, otimizei queries e entreguei threads de exclusão automatizada, rotinas de e-mail e a integração Java com N8n para uso de IA.',
       ref: 'trx-dev',
       months: 12,
     },
@@ -114,7 +114,7 @@ const pt: Content = {
       end: '09.2025',
       status: 'archive',
       description:
-        'Validação e homologação de funcionalidades com o cliente final, com foco em fluxos de negócio e no processo de aceite. Nas reuniões com clientes, esclarecia dúvidas, levantava problemas e alinhava o comportamento esperado do sistema, fazendo a ponte entre usuários e time técnico.',
+        'Validação e homologação de funcionalidades com o cliente final, com foco em fluxos de negócio e no processo de aceite, por meio de testes manuais e de automação de testes com Ruby. Nas reuniões com clientes, esclarecia dúvidas, levantava problemas e alinhava o comportamento esperado do sistema, fazendo a ponte entre usuários e time técnico.',
       ref: 'trx-qa',
       months: 2,
     },
@@ -138,15 +138,15 @@ const en: Content = {
   name: 'João Lobo',
   statement: [
     [
-      "I'm a Software Engineering student at the University of Brasília, in my 7th semester, and my focus today is deep learning and computer vision. I've been going deeper into machine learning with Python, PyTorch and OpenCV, and that's where the next projects on this page are headed.",
+      "I'm a Software Engineering student at the University of Brasília, in my 7th semester. I've been going deeper into machine learning, deep learning and computer vision with Python, as well as the mathematical foundations behind them. That's where the next projects on this page are headed.",
     ],
     [
-      'Research is what drives me most. Since October 2024 I have been a researcher on the ',
+      "I'm a very curious person: I like understanding how things work under the hood, and that's what led me to research. Since October 2024 I've been a researcher on the ",
       { text: 'Open Automotive Simulator', href: OAS_URL },
-      ", UnB's vehicle simulator for teaching, research and development in automotive engineering. I built much of the first version's world in Unreal Engine 5, from maps and terrain to traffic, pedestrians, MetaHumans and the MATLAB integration, and I now develop OAS2 in Godot. The next step is bringing computer vision into the simulator.",
+      ", UnB's vehicle simulator for teaching, research and development in automotive engineering. I built much of the first version's world in Unreal Engine 5, from maps and terrain to traffic, pedestrians and MetaHumans, and I now develop OAS2 in Godot. The next step is bringing computer vision into the simulator.",
     ],
     [
-      'I also love the creative side of building software: thinking through how a product should work, validating requirements, and designing features and interfaces that make life easier for both the people who use it and the people who maintain it, without giving up performance. Alongside research, I spent just over a year at Trix Tecnologia Inteligente, moving from QA to full stack Java development.',
+      'I also love the creative side of building software: thinking about the product and the solution, understanding a problem in depth and turning it into something that actually works, with features and interfaces that make life easier for both the people who use it and the people who maintain it, without giving up performance.',
     ],
   ],
   contacts,
@@ -158,7 +158,7 @@ const en: Content = {
       start: '10.2024',
       status: 'active',
       description:
-        'Research and development of the Open Automotive Simulator. In Unreal Engine 5, I built maps, tracks, terrain and landscapes with texture blending, World Partition, HLOD and graphics optimization; I set up the traffic and pedestrian systems with NPCs, animated MetaHumans, an infinite map, the MATLAB integration and the menu UI. On OAS2, in Godot with GDScript, I built the first and third person cameras, the car and parameter menus, the steering wheel animation and braking model improvements, and I am developing an algorithm that automatically fits the steering wheel position to each car.',
+        'Research and development of the Open Automotive Simulator. In Unreal Engine 5, I created maps, tracks, terrain and landscapes with texture blending, World Partition, HLOD and graphics optimization; I set up the traffic and pedestrian systems with NPCs, animated MetaHumans and the menu UI. In OAS2, using Godot and GDScript, I developed first- and third-person cameras, car and parameter menus, steering wheel animation and improvements to the braking model. I am also developing an algorithm that automatically adjusts the steering wheel and camera positions for each car and, based on the GET3D paper, researching the development of an AI capable of generating custom car models for import into the simulator.',
       ref: 'oas-sim',
       months: 24,
     },
@@ -169,7 +169,7 @@ const en: Content = {
       end: '08.2026',
       status: 'archive',
       description:
-        'Full stack development on a Java MVC system, across business rules, interface and integration between layers. I fixed critical bugs, optimized queries and page performance, and shipped automated deletion threads, a financial system for account automation, email routines and a Java to N8n integration for AI features. I became the technical reference for one business rules layer.',
+        'Full stack development on a Java MVC system, across business rules, interface and integration between layers. I fixed critical bugs, optimized queries, and shipped automated deletion threads, email routines and a Java to N8n integration for AI features.',
       ref: 'trx-dev',
       months: 12,
     },
@@ -180,7 +180,7 @@ const en: Content = {
       end: '09.2025',
       status: 'archive',
       description:
-        'Validated and signed off features with the end client, focusing on business flows and the acceptance process. In client meetings I cleared up questions, raised issues and aligned expected system behavior, acting as the bridge between users and the technical team.',
+        'Validated and signed off features with the end client, focusing on business flows and the acceptance process, through manual testing and test automation with Ruby. In client meetings I cleared up questions, raised issues and aligned expected system behavior, acting as the bridge between users and the technical team.',
       ref: 'trx-qa',
       months: 2,
     },
