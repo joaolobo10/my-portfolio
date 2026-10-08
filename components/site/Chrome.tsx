@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { useLang, type Lang } from '@/lib/i18n'
+import PulseHeart from '@/components/ui/PulseHeart/PulseHeart'
 
 function useClock() {
   const [time, setTime] = useState('')
@@ -19,7 +20,8 @@ function useClock() {
   return time
 }
 
-// Canto fixo no topo: troca de idioma + hora local.
+// Canto fixo no topo: curtida + troca de idioma + hora local.
+// A curtida ainda não é salva: some ao recarregar a página.
 export default function Chrome({ visible }: { visible: boolean }) {
   const { lang, setLang, t } = useLang()
   const time = useClock()
@@ -27,6 +29,16 @@ export default function Chrome({ visible }: { visible: boolean }) {
 
   return (
     <aside className={cn('chrome', visible && 'is-in')}>
+      <PulseHeart
+        className="chrome__like"
+        size={16}
+        corner={999}
+        pillColor="rgb(255 255 255 / 0.06)"
+        idleColor="rgb(255 255 255 / 0.4)"
+        likedColor="#ff4d6d"
+        textColor="rgb(255 255 255 / 0.8)"
+        label={t.like}
+      />
       <div className="chrome__lang" role="group" aria-label={t.langSwitch}>
         {langs.map((code, i) => (
           <span key={code} className="chrome__lang-item">

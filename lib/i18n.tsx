@@ -10,15 +10,20 @@ const STORAGE_KEY = 'portfolio-lang'
 // O conteúdo em si (bio, projetos, cargos) fica em lib/content.ts.
 export const ui = {
   pt: {
+    hero: { hello: 'Olá', welcome: 'boas-vindas à minha página, eu sou' },
     sections: {
       statement: { path: '~ / sobre / declaracao.md', id: '§ 00.a' },
       artifacts: { path: '~ / trabalho / artefatos.[*]', id: '§ 01.a' },
       roles: { path: '~ / trabalho / cargos.md', id: '§ 01.b' },
+      education: { path: '~ / formacao / academica.md', id: '§ 02.a' },
+      languages: { path: '~ / formacao / idiomas.md', id: '§ 02.b' },
     },
     status: { active: '[ATIVO]', beta: '[BETA]', archive: '[ARQUIVO]' },
+    education: { progress: '[EM ANDAMENTO]', done: '[CONCLUÍDO]' },
     duration: 'DURAÇÃO',
     months: 'MESES',
     langSwitch: 'Mudar idioma',
+    like: 'Curtir',
     projects: 'Projetos',
     lightbox: {
       dialog: 'Visualização do projeto',
@@ -39,15 +44,20 @@ export const ui = {
     },
   },
   en: {
+    hero: { hello: 'Hello', welcome: "welcome to my page, I'm" },
     sections: {
       statement: { path: '~ / about / statement.md', id: '§ 00.a' },
       artifacts: { path: '~ / work / artifacts.[*]', id: '§ 01.a' },
       roles: { path: '~ / work / roles.md', id: '§ 01.b' },
+      education: { path: '~ / education / academic.md', id: '§ 02.a' },
+      languages: { path: '~ / education / languages.md', id: '§ 02.b' },
     },
     status: { active: '[ACTIVE]', beta: '[BETA]', archive: '[ARCHIVE]' },
+    education: { progress: '[IN PROGRESS]', done: '[COMPLETED]' },
     duration: 'DURATION',
     months: 'MO',
     langSwitch: 'Switch language',
+    like: 'Like',
     projects: 'Projects',
     lightbox: {
       dialog: 'Project preview',

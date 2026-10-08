@@ -355,6 +355,24 @@ body {
   opacity: 1;
 }
 
+/* Rastro de luz do cursor: camada fixa acima de tudo (a intro fica em 100), sem receber cliques. */
+.glow-cursor.glow-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+}
+
+/* Curtida: contagem no mesmo mono de 11px do resto da barra. */
+.chrome__like {
+  margin-right: 4px;
+}
+
+.chrome__like .pulse-heart__count {
+  font-size: 11px;
+  font-weight: 500;
+}
+
 .chrome__lang {
   display: inline-flex;
   align-items: center;
@@ -415,23 +433,30 @@ body {
   margin-bottom: 96px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo__mark {
+.hero__mark {
+  display: block;
   width: 40px;
   height: 40px;
+  margin-bottom: 28px;
   fill: var(--accent);
 }
 
-.logo__word {
-  font-size: 40px;
+.hero__title {
+  font-size: 48px;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.03em;
+  color: var(--text-3);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.hero__visitor {
+  color: var(--accent);
+}
+
+.hero__name {
+  color: var(--text-1);
 }
 
 .section + .section {
@@ -855,6 +880,10 @@ body {
   gap: 64px;
 }
 
+.roles--compact {
+  gap: 40px;
+}
+
 .role {
   position: relative;
 }
@@ -961,13 +990,14 @@ body {
     margin-bottom: 72px;
   }
 
-  .logo__word {
-    font-size: 32px;
+  .hero__title {
+    font-size: 34px;
   }
 
-  .logo__mark {
+  .hero__mark {
     width: 32px;
     height: 32px;
+    margin-bottom: 20px;
   }
 
   .statement p {
