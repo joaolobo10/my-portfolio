@@ -11,6 +11,8 @@ export type Artifact = {
   ratio: [number, number]
   // Capa do projeto (em /public). Sem imagem, o card mostra um placeholder.
   image?: string
+  // Vídeo do projeto (em /public). Toca mudo em loop na faixa; a capa vira o poster.
+  video?: string
   // Link externo do projeto, mostrado no lightbox.
   href?: string
 }
@@ -69,8 +71,20 @@ const artifacts: Artifact[] = [
     image: '/projects/klik-thumb.jpg',
     href: 'https://www.useklik.com.br/',
   },
-  { year: '2026', title: 'Lorem ipsum', ratio: [1, 1] },
-  { year: '2026', title: 'Dolor sit amet consectetur', ratio: [16, 10] },
+  {
+    year: '2026',
+    title: 'Pet Time',
+    ratio: [9, 16],
+    image: '/projects/pet-time-tutor-thumb.jpg',
+    video: '/projects/pet-time-tutor.mp4',
+  },
+  {
+    year: '2026',
+    title: 'Pet Time',
+    ratio: [16, 9],
+    image: '/projects/pet-time-admin-thumb.jpg',
+    video: '/projects/pet-time-admin.mp4',
+  },
   { year: '2025', title: 'Adipiscing elit sed do', ratio: [4, 5] },
   { year: '2025', title: 'Eiusmod tempor incididunt', ratio: [16, 9] },
   { year: '2024', title: 'Ut labore et dolore', ratio: [1, 1] },

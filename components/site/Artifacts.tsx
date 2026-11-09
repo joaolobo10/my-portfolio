@@ -36,7 +36,28 @@ function Placeholder({ artifact }: { artifact: Artifact }) {
   )
 }
 
-function Cover({ artifact, sizes }: { artifact: Artifact; sizes: string }) {
+type CoverProps = { artifact: Artifact; sizes: string; controls?: boolean }
+
+function Cover({ artifact, sizes, controls = false }: CoverProps) {
+  if (artifact.video) {
+    // Proporção do card = proporção do vídeo, e object-fit: cover garante que
+    // nunca aparece faixa preta mesmo com arredondamento de pixels.
+    return (
+      <video
+        className={cn('cover cover--video', controls && 'cover--interactive')}
+        src={artifact.video}
+        poster={artifact.image}
+        autoPlay
+        muted
+        loop
+        playsInline
+        controls={controls}
+        preload="metadata"
+        draggable={false}
+        aria-hidden={controls ? undefined : true}
+      />
+    )
+  }
   if (!artifact.image) return <Placeholder artifact={artifact} />
   return <Image src={artifact.image} alt="" fill sizes={sizes} draggable={false} className="cover" />
 }
@@ -219,7 +240,7 @@ function Strip({ artifacts, label, onOpen }: StripProps) {
       >
         {artifacts.map((artifact, i) => (
           <li
-            key={`${artifact.year}-${artifact.title}`}
+            key={`${i}-${artifact.title}`}
             className="strip__reveal"
             style={{ '--reveal-delay': `${Math.min(i * STAGGER, MAX_DELAY)}ms` } as CSSProperties}
           >
@@ -290,7 +311,7 @@ function Lightbox({ artifacts, index, onIndex, onClose }: LightboxProps) {
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div key={index} className="lightbox__stage">
-        <Cover artifact={artifact} sizes="(max-width: 1280px) 86vw, 1100px" />
+        <Cover artifact={artifact} sizes="(max-width: 1280px) 86vw, 1100px" controls />
       </div>
       <div className="lightbox__meta">
         <span>
