@@ -72,15 +72,15 @@ const pt: Content = {
   name: 'João Lobo',
   statement: [
     [
-      'Sou estudante de Engenharia de Software na Universidade de Brasília, no 7º semestre. Hoje venho me aprofundando em machine learning, deep learning e visão computacional com Python, e também nos fundamentos matemáticos que sustentam essas áreas. É nessa direção que vão os próximos projetos desta página.',
+      'Sou estudante de Engenharia de Software na Universidade de Brasília, no 7º semestre. Hoje venho me aprofundando no estudo de Gaussian Splatting para aplicação em simuladores.',
     ],
     [
       'Sou uma pessoa muito curiosa: gosto de entender como as coisas funcionam por dentro, e foi isso que me levou à pesquisa. Desde outubro de 2024 sou pesquisador no ',
       { text: 'Open Automotive Simulator', href: OAS_URL },
-      ', o simulador veicular da UnB voltado a ensino, pesquisa e desenvolvimento em engenharia automotiva. Construí boa parte do mundo da primeira versão na Unreal Engine 5, de mapas e terreno a trânsito, pedestres e MetaHumans, e hoje desenvolvo o OAS2 em Godot. O próximo passo é levar visão computacional para dentro do simulador.',
+      ', o simulador veicular da UnB voltado a ensino, pesquisa e desenvolvimento em engenharia automotiva. Construí boa parte do mundo da primeira versão na Unreal Engine 5, de mapas e terreno a trânsito, pedestres e MetaHumans, e hoje desenvolvo o OAS2 em Godot. O próximo passo é levar o Gaussian Splatting para dentro do simulador.',
     ],
     [
-      'Também gosto do lado criativo de fazer software: pensar no produto e na solução, entender o problema a fundo e transformá-lo em algo que funcione de verdade, com funcionalidades e interfaces que facilitem a vida de quem usa e de quem mantém, sem abrir mão de desempenho.',
+      'Também gosto do lado criativo de fazer software: pensar no produto e na solução, entender o problema a fundo e transformá-lo em algo que funcione de verdade, com funcionalidades e interfaces que facilitem a vida de quem usa, sem abrir mão de desempenho. E, com o avanço da IA, ela virou minha parceira de trabalho: uso para acelerar o desenvolvimento e transformar em realidade aquelas ideias ambiciosas que antes ficavam eternamente na lista do "um dia eu faço".',
     ],
   ],
   contacts,
@@ -138,15 +138,15 @@ const en: Content = {
   name: 'João Lobo',
   statement: [
     [
-      "I'm a Software Engineering student at the University of Brasília, in my 7th semester. I've been going deeper into machine learning, deep learning and computer vision with Python, as well as the mathematical foundations behind them. That's where the next projects on this page are headed.",
+      "I'm a Software Engineering student at the University of Brasília, in my 7th semester. I've been going deeper into Gaussian Splatting and how to apply it to simulators.",
     ],
     [
       "I'm a very curious person: I like understanding how things work under the hood, and that's what led me to research. Since October 2024 I've been a researcher on the ",
       { text: 'Open Automotive Simulator', href: OAS_URL },
-      ", UnB's vehicle simulator for teaching, research and development in automotive engineering. I built much of the first version's world in Unreal Engine 5, from maps and terrain to traffic, pedestrians and MetaHumans, and I now develop OAS2 in Godot. The next step is bringing computer vision into the simulator.",
+      ", UnB's vehicle simulator for teaching, research and development in automotive engineering. I built much of the first version's world in Unreal Engine 5, from maps and terrain to traffic, pedestrians and MetaHumans, and I now develop OAS2 in Godot. The next step is bringing Gaussian Splatting into the simulator.",
     ],
     [
-      'I also love the creative side of building software: thinking about the product and the solution, understanding a problem in depth and turning it into something that actually works, with features and interfaces that make life easier for both the people who use it and the people who maintain it, without giving up performance.',
+      'I also love the creative side of building software: thinking about the product and the solution, understanding a problem in depth and turning it into something that actually works, with features and interfaces that make life easier for the people who use it, without giving up performance. And with the rise of AI, it has become my building partner: I use it to speed up development and turn ambitious ideas into real things, the kind that used to live forever on my "someday" list.',
     ],
   ],
   contacts,
