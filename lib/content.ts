@@ -73,6 +73,13 @@ const artifacts: Artifact[] = [
   },
   {
     year: '2026',
+    title: 'findgap',
+    ratio: [16, 9],
+    image: '/projects/findgap-thumb.jpg',
+    href: 'https://github.com/joaolobo10/findgap',
+  },
+  {
+    year: '2026',
     title: 'Pet Time',
     ratio: [9, 16],
     image: '/projects/pet-time-tutor-thumb.jpg',
