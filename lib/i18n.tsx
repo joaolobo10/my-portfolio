@@ -23,7 +23,6 @@ export const ui = {
     duration: 'DURAÇÃO',
     months: 'MESES',
     langSwitch: 'Mudar idioma',
-    like: 'Curtir',
     projects: 'Projetos',
     lightbox: {
       dialog: 'Visualização do projeto',
@@ -58,7 +57,6 @@ export const ui = {
     duration: 'DURATION',
     months: 'MO',
     langSwitch: 'Switch language',
-    like: 'Like',
     projects: 'Projects',
     lightbox: {
       dialog: 'Project preview',
