@@ -1,14 +1,18 @@
 import type { Lang } from './i18n'
 
-// Conteúdo do portfólio por idioma. Os projetos (artifacts) ainda são placeholder.
+// Conteúdo do portfólio por idioma. Os projetos sem imagem ainda são placeholder.
 
 export type Segment = string | { text: string; href: string }
 
 export type Artifact = {
   year: string
   title: string
-  // Proporção do bloco (largura / altura) — quadrados e retângulos simulando projetos.
+  // Proporção da imagem (largura / altura); define a largura do card na faixa.
   ratio: [number, number]
+  // Capa do projeto (em /public). Sem imagem, o card mostra um placeholder.
+  image?: string
+  // Link externo do projeto, mostrado no lightbox.
+  href?: string
 }
 
 export type RoleStatus = 'active' | 'beta' | 'archive'
@@ -58,6 +62,13 @@ const contacts: Contact[] = [
 ]
 
 const artifacts: Artifact[] = [
+  {
+    year: '2026',
+    title: 'Klik',
+    ratio: [16, 9],
+    image: '/projects/klik-thumb.jpg',
+    href: 'https://www.useklik.com.br/',
+  },
   { year: '2026', title: 'Lorem ipsum', ratio: [1, 1] },
   { year: '2026', title: 'Dolor sit amet consectetur', ratio: [16, 10] },
   { year: '2025', title: 'Adipiscing elit sed do', ratio: [4, 5] },

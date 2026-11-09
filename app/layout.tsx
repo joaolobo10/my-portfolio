@@ -15,7 +15,6 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "joaolobo.dev",
   description: "Welcome to My portfolio!",
-  icons:"/favicon.ico",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

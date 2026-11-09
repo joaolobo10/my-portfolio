@@ -30,6 +30,7 @@ export const ui = {
       close: 'FECHAR',
       prev: 'ANT',
       next: 'PRÓX',
+      visit: 'VISITAR',
     },
     intro: {
       dialog: 'Entrada do portfólio',
@@ -64,6 +65,7 @@ export const ui = {
       close: 'CLOSE',
       prev: 'PREV',
       next: 'NEXT',
+      visit: 'VISIT',
     },
     intro: {
       dialog: 'Portfolio entrance',
