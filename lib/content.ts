@@ -1,6 +1,6 @@
 import type { Lang } from './i18n'
 
-// Conteúdo do portfólio por idioma. Os projetos sem imagem ainda são placeholder.
+// Conteúdo do portfólio por idioma.
 
 export type Segment = string | { text: string; href: string }
 
@@ -92,12 +92,6 @@ const artifacts: Artifact[] = [
     image: '/projects/pet-time-admin-thumb.jpg',
     video: '/projects/pet-time-admin.mp4',
   },
-  { year: '2025', title: 'Adipiscing elit sed do', ratio: [4, 5] },
-  { year: '2025', title: 'Eiusmod tempor incididunt', ratio: [16, 9] },
-  { year: '2024', title: 'Ut labore et dolore', ratio: [1, 1] },
-  { year: '2024', title: 'Magna aliqua ut enim', ratio: [3, 2] },
-  { year: '2023', title: 'Minim veniam quis', ratio: [3, 4] },
-  { year: '2021-2023', title: 'Nostrud exercitation ullamco', ratio: [21, 9] },
 ]
 
 const pt: Content = {
